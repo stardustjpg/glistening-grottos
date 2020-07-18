@@ -19,4 +19,10 @@ public class GGItems {
         return ITEMS.register(name, () -> new BlockItem(blockSupplier.get(), new Item.Properties().group(GGItemGroup.MOD_ITEM_GROUP)));
     }
 
+    private static RegistryObject<Item> registerBlockItem(RegistryObject<Block> blockSupplier) {
+        return ITEMS.register(blockSupplier.getId().getPath(), () -> new BlockItem(blockSupplier.get(), new Item.Properties().group(GGItemGroup.MOD_ITEM_GROUP)));
+    }
+
+
+    public static final RegistryObject<Item> BLOOM_SOIL = registerBlockItem(GGBlocks.BLOOM_SOIL);
 }
